@@ -109,8 +109,8 @@ def unpack_ant(interface):
         return
     
     archive = "apache-ant-1.10.12-bin.tar.gz"
-    unpacked = "apache-ant-1.10.12"
-    url = "https://dlcdn.apache.org//ant/binaries/" + archive
+    unpacked = "apache-ant-1.10.15"
+    url = "https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.15-bin.tar.gz"
 
     interface.info("I'm downloading Apache Ant. This might take a while.")
     
@@ -184,7 +184,7 @@ def install_sdk(interface):
     unpack_sdk(interface)
 
     if plat.macintosh or plat.linux:
-        os.chmod("android-sdk/tools/android", 0755)
+        os.chmod("android-sdk/tools/android", 0o755)
     
     get_packages(interface)
     generate_keys(interface)
